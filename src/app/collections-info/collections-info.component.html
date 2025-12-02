@@ -1,0 +1,13 @@
+<div class="container">
+    <h1>Informações de Coleta</h1>
+  
+    <mat-card class="collect-card" *ngFor="let info of collections">
+      <mat-card-title>{{ info.bairro }}</mat-card-title>
+      <mat-card-content>
+        <p><strong>Tipo de Resíduo:</strong> {{ info.tipoResiduo }}</p>
+        <p><strong>Dia da Semana:</strong> {{ info.dia }}</p>
+        <p><strong>Horário:</strong> {{ info.horario }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

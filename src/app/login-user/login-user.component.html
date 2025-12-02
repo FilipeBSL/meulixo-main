@@ -1,0 +1,32 @@
+<div class="container">
+    <mat-card class="login-card">
+      <mat-card-header>
+        <mat-card-title>Login</mat-card-title>
+      </mat-card-header>
+  
+    <mat-card-content>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" formControlName="email" required autocomplete="email" />
+            <mat-error *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+              Por favor, insira um email válido.
+            </mat-error>
+          </mat-form-field>
+  
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Senha</mat-label>
+            <input matInput type="password" formControlName="senha" required autocomplete="password" />
+            <mat-error *ngIf="loginForm.get('senha')?.invalid && loginForm.get('senha')?.touched">
+              A senha é obrigatória e deve ter no mínimo 6 caracteres.
+            </mat-error>
+          </mat-form-field>
+  
+          <button mat-raised-button color="primary  " type="submit" [disabled]="loginForm.invalid" class="full-width">
+            Logar
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+</div>
+  
